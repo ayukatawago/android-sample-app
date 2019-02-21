@@ -13,6 +13,7 @@ jdk:
 branches:
   only:
   - master
+  - adapter
 jobs:
   include:
   - stage: check
