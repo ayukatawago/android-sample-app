@@ -25,6 +25,9 @@ android {
         warningsAsErrors true
         abortOnError true
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 configurations {

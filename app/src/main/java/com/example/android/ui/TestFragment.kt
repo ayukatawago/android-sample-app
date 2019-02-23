@@ -26,7 +26,7 @@ class TestFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val adapter = TestAdapter(context!!, viewModel.items)
+        val adapter = TestAdapter(viewModel.items)
         val view = inflater.inflate(R.layout.test_fragment, container, false)
         view?.run {
             val recyclerView = findViewById<RecyclerView>(R.id.adapter)

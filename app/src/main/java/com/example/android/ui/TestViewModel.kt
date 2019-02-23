@@ -1,11 +1,12 @@
 package com.example.android.ui
 
 import androidx.lifecycle.ViewModel
+import com.example.android.model.TestItem
 
 class TestViewModel : ViewModel() {
-    val items = mutableListOf<String>()
+    val items = mutableListOf<TestItem>()
 
     fun addNewItem() {
-        items.add("Test Item ${items.size}")
+        items.add(TestItem("Test Item ${items.size}"))
     }
 }
