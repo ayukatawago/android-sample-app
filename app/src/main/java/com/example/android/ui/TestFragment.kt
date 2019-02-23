@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.ListView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.android.R
 
 class TestFragment : Fragment() {
@@ -26,11 +26,12 @@ class TestFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val adapter = ArrayAdapter<String>(context!!, android.R.layout.simple_list_item_1, viewModel.items)
+        val adapter = TestAdapter(context!!, viewModel.items)
         val view = inflater.inflate(R.layout.test_fragment, container, false)
         view?.run {
-            val listView = findViewById<ListView>(R.id.adapter)
-            listView.adapter = adapter
+            val recyclerView = findViewById<RecyclerView>(R.id.adapter)
+            recyclerView.adapter = adapter
+            recyclerView.layoutManager = LinearLayoutManager(context!!)
 
             val btnAdd = findViewById<Button>(R.id.btn_add)
             btnAdd.setOnClickListener {
