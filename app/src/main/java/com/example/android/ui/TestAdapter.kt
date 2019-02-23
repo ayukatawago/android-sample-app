@@ -6,13 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android.R
 
 class TestAdapter(
     private val context: Context,
     private val items: List<String>
 ) : RecyclerView.Adapter<TestAdapter.TestViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TestViewHolder {
-        return TestViewHolder(LayoutInflater.from(context).inflate(android.R.layout.simple_list_item_1, parent, false))
+        return TestViewHolder(LayoutInflater.from(context).inflate(R.layout.test_item, parent, false))
     }
 
     override fun getItemCount() = items.size
@@ -22,6 +23,6 @@ class TestAdapter(
     }
 
     class TestViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView? = view.findViewById(android.R.id.text1)
+        val textView: TextView? = view.findViewById(R.id.tv_item)
     }
 }
