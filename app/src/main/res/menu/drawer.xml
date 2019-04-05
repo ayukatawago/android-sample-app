@@ -6,4 +6,10 @@
             android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/home" />
     </group>
+    <group>
+        <item
+            android:id="@+id/nav_listview"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="@string/listview" />
+    </group>
 </menu>

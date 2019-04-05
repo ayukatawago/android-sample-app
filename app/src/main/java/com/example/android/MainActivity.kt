@@ -1,10 +1,12 @@
 package com.example.android
 
 import android.os.Bundle
+import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -18,14 +20,36 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setupNavigation()
+        initView()
     }
 
-    private fun setupNavigation() {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.drawer, menu)
+        val appBarConfiguration = AppBarConfiguration.Builder(menu).apply {
+            setDrawerLayout(drawer)
+        }.build()
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
+        NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration)
+        return true
+    }
+
+    private fun initView() {
         setSupportActionBar(toolbar)
 
-        NavigationUI.setupActionBarWithNavController(this, navController, drawer)
-        NavigationUI.setupWithNavController(nav_view, navController)
+        nav_view.setNavigationItemSelectedListener { item ->
+            if (drawer.isDrawerOpen(nav_view)) {
+                drawer.closeDrawer(nav_view)
+            }
+            handleNavigation(item.itemId)
+        }
+    }
+
+    private fun handleNavigation(itemId: Int): Boolean {
+        if (navController.currentDestination?.id == itemId) {
+            return false
+        }
+        navController.navigate(itemId)
+        return true
     }
 
     override fun onSupportNavigateUp(): Boolean {
