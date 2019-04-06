@@ -29,7 +29,7 @@ class ListViewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         listview?.apply {
             val names = arrayOf("Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread")
-            val adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, names)
+            val adapter = ArrayAdapter(context, R.layout.list_item_layout, names)
             setAdapter(adapter)
         }
     }
