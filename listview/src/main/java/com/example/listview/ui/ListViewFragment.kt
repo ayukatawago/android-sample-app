@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import com.example.listview.R
+import kotlinx.android.synthetic.main.list_view_fragment.*
 
 class ListViewFragment : Fragment() {
 
@@ -22,6 +24,14 @@ class ListViewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.list_view_fragment, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        listview?.apply {
+            val names = arrayOf("Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread")
+            val adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, names)
+            setAdapter(adapter)
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
