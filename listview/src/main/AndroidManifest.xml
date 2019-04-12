@@ -1,1 +1,5 @@
-<manifest package="com.example.listview" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.listview">
+
+    <application android:supportsRtl="true" />
+</manifest>
