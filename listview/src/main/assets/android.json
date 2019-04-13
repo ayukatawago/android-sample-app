@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Cupcake",
+    "version": "1.5",
+    "api": "3"
+  },
+  {
+    "name": "Donut",
+    "version": "1.6",
+    "api": "4"
+  },
+  {
+    "name": "Eclair",
+    "version": "2.0-2.1",
+    "api": "5-7"
+  },
+  {
+    "name": "Froyo",
+    "version": "2.2-2.2.3",
+    "api": "8"
+  },
+  {
+    "name": "Gingerbread",
+    "version": "2.3-2.3.7",
+    "api": "9-10"
+  },
+  {
+    "name": "Honeycomb",
+    "version": "3.0-3.2.6",
+    "api": "11-13"
+  },
+  {
+    "name": "Ice Cream Sandwich",
+    "version": "4.0-4.0.4",
+    "api": "14-15"
+  },
+  {
+    "name": "Jelly Beans",
+    "version": "4.1-4.3.1",
+    "api": "16-18"
+  },
+  {
+    "name": "KitKat",
+    "version": "4.4-4.4.4",
+    "api": "19-20"
+  },
+  {
+    "name": "Lollipop",
+    "version": "5.0-5.1.1",
+    "api": "21-22"
+  },
+  {
+    "name": "Marshmallow",
+    "version": "6.0-6.0.1",
+    "api": "23"
+  },
+  {
+    "name": "Nougat",
+    "version": "7.0-7.1.1",
+    "api": "24-25"
+  },
+  {
+    "name": "Oreo",
+    "version": "8.0-8.1",
+    "api": "26-27"
+  },
+  {
+    "name": "Pie",
+    "version": "9.0",
+    "api": "28"
+  }
+]
