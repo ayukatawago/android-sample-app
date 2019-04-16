@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.listview.data.AndroidDataModel
+import com.example.common.GlideApp
 import kotlinx.android.synthetic.main.list_item_layout.view.*
 
 class AndroidArrayAdapter(
@@ -24,7 +26,8 @@ class AndroidArrayAdapter(
             holder = ViewHolder(
                 view.tv_name,
                 view.tv_version,
-                view.tv_api
+                view.tv_api,
+                view.iv_logo
             )
             view.tag = holder
         } else {
@@ -36,9 +39,16 @@ class AndroidArrayAdapter(
         holder.nameTextView.text = data.name
         holder.versionTextView.text = data.version
         holder.apiTextView.text = data.api
+        holder.updateIcon(data.url)
 
         return view
     }
 
-    class ViewHolder(val nameTextView: TextView, val versionTextView: TextView, val apiTextView: TextView)
+    class ViewHolder(val nameTextView: TextView, val versionTextView: TextView, val apiTextView: TextView, val logoImageView: ImageView) {
+        fun updateIcon(url: String) {
+            GlideApp.with(this.logoImageView)
+                .load(url)
+                .into(logoImageView)
+        }
+    }
 }

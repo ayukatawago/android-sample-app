@@ -2,71 +2,85 @@
   {
     "name": "Cupcake",
     "version": "1.5",
-    "api": "3"
+    "api": "3",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-3.png"
   },
   {
     "name": "Donut",
     "version": "1.6",
-    "api": "4"
+    "api": "4",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-4.png"
   },
   {
     "name": "Eclair",
     "version": "2.0-2.1",
-    "api": "5-7"
+    "api": "5-7",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-5.png"
   },
   {
     "name": "Froyo",
     "version": "2.2-2.2.3",
-    "api": "8"
+    "api": "8",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-6.png"
   },
   {
     "name": "Gingerbread",
     "version": "2.3-2.3.7",
-    "api": "9-10"
+    "api": "9-10",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-7.png"
   },
   {
     "name": "Honeycomb",
     "version": "3.0-3.2.6",
-    "api": "11-13"
+    "api": "11-13",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-8.png"
   },
   {
     "name": "Ice Cream Sandwich",
     "version": "4.0-4.0.4",
-    "api": "14-15"
+    "api": "14-15",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-9.png"
   },
   {
     "name": "Jelly Beans",
     "version": "4.1-4.3.1",
-    "api": "16-18"
+    "api": "16-18",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-41.jpg"
   },
   {
     "name": "KitKat",
     "version": "4.4-4.4.4",
-    "api": "19-20"
+    "api": "19-20",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-44.png"
   },
   {
     "name": "Lollipop",
     "version": "5.0-5.1.1",
-    "api": "21-22"
+    "api": "21-22",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-50.png"
   },
   {
     "name": "Marshmallow",
     "version": "6.0-6.0.1",
-    "api": "23"
+    "api": "23",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-60.png"
   },
   {
     "name": "Nougat",
     "version": "7.0-7.1.1",
-    "api": "24-25"
+    "api": "24-25",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-70.png"
   },
   {
     "name": "Oreo",
     "version": "8.0-8.1",
-    "api": "26-27"
+    "api": "26-27",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-80.png"
   },
   {
     "name": "Pie",
     "version": "9.0",
-    "api": "28"
+    "api": "28",
+    "url": "https://www.orefolder.net/wp/wp-content/uploads/2018/08/20180807-droid-90.png"
   }
 ]
