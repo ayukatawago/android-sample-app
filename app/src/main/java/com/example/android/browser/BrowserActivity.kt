@@ -10,13 +10,16 @@ import com.example.android.R
 import com.example.android.databinding.BrowserActivityLayoutBinding
 
 class BrowserActivity : AppCompatActivity() {
+    private lateinit var viewBinding: BrowserActivityLayoutBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val viewBinding = BrowserActivityLayoutBinding.inflate(layoutInflater)
-        setContentView(viewBinding.root)
+        viewBinding = BrowserActivityLayoutBinding.inflate(layoutInflater).also {
+            setContentView(it.root)
+            setSupportActionBar(it.toolbar)
+        }
 
-        setSupportActionBar(viewBinding.toolbar)
+        openBrowserFragment()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -30,6 +33,19 @@ class BrowserActivity : AppCompatActivity() {
             else -> Unit
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
+    private fun openBrowserFragment() {
+        val viewBinding = viewBinding ?: return
+        val url = intent.getStringExtra(URL_KEY)
+
+        supportFragmentManager.beginTransaction()
+            .add(viewBinding.container.id, BrowserFragment.create(url))
+            .commit()
     }
 
     companion object {
