@@ -7,6 +7,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import com.example.android.browser.BrowserActivity
 import com.example.android.browser.UrlItem
+import com.example.android.transition.SubActivity
+import com.example.android.transition.TransitionType
 import com.example.android.ui.ActivityTransitionScreen
 import com.example.android.ui.BrowserEntryScreen
 import com.example.android.ui.theme.SampleAppTheme
@@ -24,26 +26,16 @@ class MainActivity : ComponentActivity() {
     @Composable
     private fun AppType.ToCompose() =
         when (this) {
-            AppType.ACTIVITY_TRANSITION -> ActivityTransitionScreen(
-                onOpenSubActivityWithFade = {
-                    openActivityWithAnimation(AnimationType.ANDROID_FADE)
-                },
-                onOpenSubActivityWithSlide = {
-                    openActivityWithAnimation(AnimationType.ANDROID_SLIDE)
-                },
-                onOpenSubActivityWithMySlide = {
-                    openActivityWithAnimation(AnimationType.MY_SLIDE)
-                }
-            )
+            AppType.ACTIVITY_TRANSITION -> ActivityTransitionScreen(::openActivityWithAnimation)
 
             AppType.BROWSER -> BrowserEntryScreen(::openBrowser)
         }
 
-    private fun openActivityWithAnimation(animationType: AnimationType) {
-        val intent = SubActivity.createIntent(this, animationType)
+    private fun openActivityWithAnimation(transitionType: TransitionType) {
+        val intent = SubActivity.createIntent(this, transitionType)
         startActivity(intent)
         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.TIRAMISU) {
-            overridePendingTransition(animationType.openAnimRes, 0)
+            overridePendingTransition(transitionType.openAnimRes, 0)
         }
     }
 

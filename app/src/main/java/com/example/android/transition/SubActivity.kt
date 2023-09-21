@@ -1,4 +1,4 @@
-package com.example.android
+package com.example.android.transition
 
 import android.app.Activity
 import android.content.Context
@@ -12,11 +12,11 @@ import com.example.android.ui.SubScreen
 import com.example.android.ui.theme.SampleAppTheme
 
 class SubActivity : ComponentActivity() {
-    private val animationType: AnimationType? by lazy {
+    private val transitionType: TransitionType? by lazy {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getSerializableExtra(ANIMATION_TYPE, AnimationType::class.java)
+            intent.getSerializableExtra(ANIMATION_TYPE, TransitionType::class.java)
         } else {
-            intent.getSerializableExtra(ANIMATION_TYPE) as? AnimationType
+            intent.getSerializableExtra(ANIMATION_TYPE) as? TransitionType
         }
     }
 
@@ -32,7 +32,7 @@ class SubActivity : ComponentActivity() {
         onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 finish()
-                val closeAnimRes = animationType?.closeAnimRes ?: return
+                val closeAnimRes = transitionType?.closeAnimRes ?: return
                 if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.TIRAMISU) {
                     overridePendingTransition(0, closeAnimRes)
                 }
@@ -40,7 +40,7 @@ class SubActivity : ComponentActivity() {
         })
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.TIRAMISU) {
-            val animType = animationType ?: return
+            val animType = transitionType ?: return
             overrideActivityTransition(
                 Activity.OVERRIDE_TRANSITION_OPEN,
                 animType.openAnimRes,
@@ -56,9 +56,9 @@ class SubActivity : ComponentActivity() {
 
     companion object {
         private const val ANIMATION_TYPE = "animation_type"
-        fun createIntent(context: Context, animationType: AnimationType): Intent =
+        fun createIntent(context: Context, transitionType: TransitionType): Intent =
             Intent(context, SubActivity::class.java).apply {
-                putExtra(ANIMATION_TYPE, animationType)
+                putExtra(ANIMATION_TYPE, transitionType)
             }
     }
 }

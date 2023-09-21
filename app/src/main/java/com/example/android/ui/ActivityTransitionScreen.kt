@@ -5,23 +5,18 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.android.transition.TransitionType
 import com.example.android.ui.theme.SampleAppTheme
 
 @Composable
 fun ActivityTransitionScreen(
-    onOpenSubActivityWithFade: () -> Unit = {},
-    onOpenSubActivityWithSlide: () -> Unit = {},
-    onOpenSubActivityWithMySlide: () -> Unit = {}
+    onButtonClicked: (TransitionType) -> Unit = {}
 ) {
     Column {
-        Button(onClick = onOpenSubActivityWithFade) {
-            Text(text = "Open with fade animation")
-        }
-        Button(onClick = onOpenSubActivityWithSlide) {
-            Text(text = "Open with slide animation")
-        }
-        Button(onClick = onOpenSubActivityWithMySlide) {
-            Text(text = "Open with my slide animation")
+        TransitionType.values().forEach {
+            Button(onClick = { onButtonClicked(it) }) {
+                Text(text = "Open with ${it.description}")
+            }
         }
     }
 }
