@@ -2,4 +2,11 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.ktlint)
+}
+
+subprojects {
+    afterEvaluate {
+        apply(plugin = libs.plugins.ktlint.get().pluginId)
+    }
 }
