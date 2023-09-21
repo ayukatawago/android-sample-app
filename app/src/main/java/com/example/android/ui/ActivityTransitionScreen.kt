@@ -8,7 +8,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.android.ui.theme.SampleAppTheme
 
 @Composable
-fun HomeScreen(
+fun ActivityTransitionScreen(
     onOpenSubActivityWithFade: () -> Unit = {},
     onOpenSubActivityWithSlide: () -> Unit = {},
     onOpenSubActivityWithMySlide: () -> Unit = {}
@@ -30,6 +30,6 @@ fun HomeScreen(
 @Composable
 fun HomeScreenPreview() {
     SampleAppTheme {
-        HomeScreen()
+        ActivityTransitionScreen()
     }
 }

@@ -4,7 +4,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.android.ui.HomeScreen
+import com.example.android.ui.ActivityTransitionScreen
 import com.example.android.ui.theme.SampleAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -12,7 +12,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             SampleAppTheme {
-                HomeScreen(
+                ActivityTransitionScreen(
                     onOpenSubActivityWithFade = { openActivityWithAnimation(AnimationType.ANDROID_FADE) },
                     onOpenSubActivityWithSlide = { openActivityWithAnimation(AnimationType.ANDROID_SLIDE) },
                     onOpenSubActivityWithMySlide = { openActivityWithAnimation(AnimationType.MY_SLIDE) }
