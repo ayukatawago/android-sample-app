@@ -12,6 +12,7 @@ junit = "4.13.2"
 kotlin = "1.8.22"
 ktlint = "11.5.0"
 material = "1.9.0"
+leakcanary = "2.12"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity-compose" }
@@ -27,6 +28,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle-runtime" }
 junit = { module = "junit:junit", version.ref = "junit" }
+leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanary"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-plugin" }
